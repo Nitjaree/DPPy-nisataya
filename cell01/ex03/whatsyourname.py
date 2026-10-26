@@ -1,3 +1,5 @@
-print("Hey, what's your first name? : Wil
-And your last name? : 42
-Well, pleased to meet you, Wil 42.")
+print("Hey, what's your first name? :",end=" ")
+first_name = input()
+print("And your last name? :",end=" ")
+last_name = input()
+print("Well, pleased to meet you,",first_name,last_name)
