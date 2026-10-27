@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 password = "Python is awesome"
 x=input()
-if x == "Python is awesome":
+if x == password:
     print("ACCESS GRANTED")
 else:
     print ("ACCESS DENIED")
