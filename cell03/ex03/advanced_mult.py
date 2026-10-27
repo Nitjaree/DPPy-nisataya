@@ -1,14 +1,20 @@
 #!/usr/bin/python3
-i = 0;
-j = 0;
-while i < 11:
-    print ("Table de" , i , end=": " )
-    i = i + 1 
-    while j < 11:
-        print(i*j, end=" ")
-        j = j + 1    
-    print()
-    j = 0
+import sys
+
+
+if len(sys.argv) > 1 :
+    print("none")
+else:
+    i = 0;
+    j = 0;
+    while i < 11:
+        print ("Table de" , i , end=": " )
+        while j < 11:
+            print(i*j, end=" ")
+            j += 1    
+        print()
+        j = 0
+        i += 1 
 
 
 

@@ -4,5 +4,5 @@ less25=int(input())
 if less25 > 25:
     print("Error")
 else:
-    for count in range(less25, 25):
+    for count in range(less25, 26):
         print ("Inside the loop, my variable is",count)
