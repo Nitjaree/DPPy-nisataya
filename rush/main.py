@@ -25,6 +25,11 @@ def calculate_sum():
     
     input("\nPress Enter to return to the main menu...")
 
+def under_construct():
+    clear_screen()
+    print("This function under construction")
+    input("\nPress Enter to return to the main menu...")
+
 def display_menu():
     """Prints the actual main menu layout."""
     clear_screen()
@@ -32,15 +37,19 @@ def display_menu():
     print("             MAIN MENU               ")
     print("=====================================")
     print(" 1. Add Transaction")
-    print(" 2. Calculate Sum")
+    print(" 2. View Transactions")
+    print(" 3. Edit / Delete Transaction")
+    print(" 4. Search & Filter")
+    print(" 5. Financial Summary")
+    print(" 6. Cash Runway Prediction")
+    print(" 7. Can I Afford It?")
     print(" 0. Exit Program")
     print("=====================================")
-1. Add Transaction 2. View Transactions 3. Edit / Delete Transaction 4. Search & Filter 5. Financial Summary 6. Cash Runway Prediction 7. Can I Afford It? 8. Exit Enter choice: _
 
 def main():
     while True:
         display_menu()
-        choice = input("Select an option (0-2): ").strip()
+        choice = input("Select an option (0-7): ").strip()
 
         match choice:
             case "1":
@@ -52,8 +61,7 @@ def main():
                 print("Exiting program. Goodbye!\n")
                 sys.exit()
             case _:
-                print("\n[Invalid Selection] Please choose a valid option.")
-                input("Press Enter to try again...")
+                under_construct()
 
 if __name__ == '__main__':
     main()
