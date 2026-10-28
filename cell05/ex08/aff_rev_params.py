@@ -2,7 +2,7 @@
 import sys
 listA = sys.argv
 newList = []
-if len(listA) == 1: 
+if len(listA) == 1 : 
     print("none")
 else:
     listA.pop(0)
