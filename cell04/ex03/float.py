@@ -1,15 +1,11 @@
 #!/usr/bin/python3
 x = input("Give me a number: ")
-f = float(x)
-i = int(f)
-if f%i == 0:
-    print("This number is an integer.")
+if x.isnumeric():
+    f = float(x)
+    if f.is_integer:
+        print("This number is an integer.")
+    else:
+        print("This number is a decimal.")
 else:
-    print("This number is a decimal.")
+    print("This is not numeric.")
 
-# if type(x) == int:
-#     print("This number is an integer.")
-# elif type(x) == float:
-#     print("This number is a decimal.")
-# else:
-#     print("Error!")
