@@ -2,7 +2,7 @@
 # your method definition here
 def famous_births(dic):
     sdic = dict(sorted(dic.items(), key=lambda item: item[1]["date_of_birth"]))
-    print(sdic)
+    # print(sdic)
     for i in sdic:
         item = sdic[i]
         print(item["name"] , "is a great scientist born in",item["date_of_birth"])
