@@ -7,6 +7,15 @@ def clear_screen():
     """Clears the terminal screen for a clean UI look."""
     os.system('cls' if os.name == 'nt' else 'clear')
 
+def calculate_balance(transactions, opening_balance):
+    balance = opening_balance    
+    for transaction in transactions:        
+        if transaction["type"] == "income":            
+            balance += transaction["amount"]        
+        else:            
+            balance -= transaction["amount"]
+    return balance
+
 def show_greeting():
     clear_screen()
     print("=== GREETING SECTION ===")
@@ -62,6 +71,7 @@ def main():
                 sys.exit()
             case _:
                 under_construct()
-
+transactions = [    {        "id": 1,        "type": "income",        "category": "Salary",        "amount": 9000,        "recurring": True,        "description": "Monthly salary"    },    {        "id": 2,        "type": "expense",        "category": "Rent",        "amount": 6000,        "recurring": True,        "description": "Monthly rent"    },    {        "id": 3,        "type": "expense",        "category": "Food",        "amount": 4000,        "recurring": True,        "description": "Monthly food budget"    }]
+settings = {    "opening_balance": 5000,    "minimum_reserve": 2000,    "next_id": 4}
 if __name__ == '__main__':
     main()

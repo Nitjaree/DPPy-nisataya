@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
 def add_one(item):
-    global value 
-    value = item + 1
+    # global value 
+    # value = item + 1
+    item = item+1
     return 
     
 value = 42
