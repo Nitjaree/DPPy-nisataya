@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-import os
+# import os
 import sys
 
 
 
 def clear_screen():
-    """Clears the terminal screen for a clean UI look."""
-    os.system('cls' if os.name == 'nt' else 'clear')
+    # """Clears the terminal screen for a clean UI look."""
+    # os.system('cls' if os.name == 'nt' else 'clear')
+    print("\x1b[2J\x1b[H")
 
 def calculate_balance(transactions, opening_balance):
     balance = opening_balance    
@@ -16,6 +17,19 @@ def calculate_balance(transactions, opening_balance):
         else:            
             balance -= transaction["amount"]
     return balance
+
+def view_balance():
+    clear_screen()
+    opening_balance = float(input("Please input opening balance : "))
+    print(calculate_balance(transactions,opening_balance))
+    input("\nPress Enter to return to the main menu...")
+
+def typeis():
+    clear_screen()
+    print (type(transactions))
+    print()
+    print (type(settings))
+    input("\nPress Enter to return to the main menu...")
 
 def show_greeting():
     clear_screen()
@@ -65,13 +79,18 @@ def main():
             case "1":
                 show_greeting()
             case "2":
+                view_balance()
+            case "3":
                 calculate_sum()
+            case "9":
+                typeis()
             case "0":
                 clear_screen()
                 print("Exiting program. Goodbye!\n")
                 sys.exit()
-            case _:
+            case _transactions:
                 under_construct()
+
 transactions = [    {        "id": 1,        "type": "income",        "category": "Salary",        "amount": 9000,        "recurring": True,        "description": "Monthly salary"    },    {        "id": 2,        "type": "expense",        "category": "Rent",        "amount": 6000,        "recurring": True,        "description": "Monthly rent"    },    {        "id": 3,        "type": "expense",        "category": "Food",        "amount": 4000,        "recurring": True,        "description": "Monthly food budget"    }]
 settings = {    "opening_balance": 5000,    "minimum_reserve": 2000,    "next_id": 4}
 if __name__ == '__main__':
