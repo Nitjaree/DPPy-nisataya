@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # your method definition here
 def greetings(txt="noble stranger"):
-    if type(txt) == int:
+    if type(txt) != str:
         print("Error! It was not a name.")
     else:
         print("Hello, " + txt + ".")
@@ -13,4 +13,4 @@ def greetings(txt="noble stranger"):
 greetings('Alexandra')
 greetings('Wil')
 greetings()
-greetings(42)
+greetings(42.42)
